@@ -1,0 +1,19 @@
+{
+  "name": "hpack-analyzer",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Offline HPACK (RFC 7541, non-Huffman) header block decoder and explainer",
+  "type": "commonjs",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test dist/test/hpack.test.js dist/test/store.test.js",
+    "start": "node dist/src/api.js",
+    "cli": "node dist/src/cli.js",
+    "demo": "node dist/src/cli.js demo"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.0",
+    "@types/node": "^22.0.0"
+  }
+}
+
