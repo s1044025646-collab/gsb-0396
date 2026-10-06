@@ -1,0 +1,75 @@
+export interface TableEntry {
+  name: Buffer;
+  value: Buffer;
+}
+
+function e(name: string, value: string): TableEntry {
+  return { name: Buffer.from(name, "utf8"), value: Buffer.from(value, "utf8") };
+}
+
+// RFC 7541 Appendix A — 61 entries, index 1..61
+export const STATIC_TABLE: TableEntry[] = [
+  e(":authority", ""),
+  e(":method", "GET"),
+  e(":method", "POST"),
+  e(":path", "/"),
+  e(":path", "/index.html"),
+  e(":scheme", "http"),
+  e(":scheme", "https"),
+  e(":status", "200"),
+  e(":status", "204"),
+  e(":status", "206"),
+  e(":status", "304"),
+  e(":status", "400"),
+  e(":status", "404"),
+  e(":status", "500"),
+  e("accept-charset", ""),
+  e("accept-encoding", "gzip, deflate"),
+  e("accept-language", ""),
+  e("accept-ranges", ""),
+  e("accept", ""),
+  e("access-control-allow-origin", ""),
+  e("age", ""),
+  e("allow", ""),
+  e("authorization", ""),
+  e("cache-control", ""),
+  e("content-disposition", ""),
+  e("content-encoding", ""),
+  e("content-language", ""),
+  e("content-length", ""),
+  e("content-location", ""),
+  e("content-range", ""),
+  e("content-type", ""),
+  e("cookie", ""),
+  e("date", ""),
+  e("etag", ""),
+  e("expect", ""),
+  e("expires", ""),
+  e("from", ""),
+  e("host", ""),
+  e("if-match", ""),
+  e("if-modified-since", ""),
+  e("if-none-match", ""),
+  e("if-range", ""),
+  e("if-unmodified-since", ""),
+  e("last-modified", ""),
+  e("link", ""),
+  e("location", ""),
+  e("max-forwards", ""),
+  e("proxy-authenticate", ""),
+  e("proxy-authorization", ""),
+  e("range", ""),
+  e("referer", ""),
+  e("refresh", ""),
+  e("retry-after", ""),
+  e("server", ""),
+  e("set-cookie", ""),
+  e("strict-transport-security", ""),
+  e("transfer-encoding", ""),
+  e("user-agent", ""),
+  e("vary", ""),
+  e("via", ""),
+  e("www-authenticate", ""),
+];
+
+export const STATIC_TABLE_SIZE = STATIC_TABLE.length; // 61
